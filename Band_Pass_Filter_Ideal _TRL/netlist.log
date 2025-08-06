@@ -1,0 +1,73 @@
+; Top Design: "Band_Pass_Filter_Ideal _TRL_lib:MCFIL_BPF_Coupled_Design_V2_Tuned:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="Band_Pass_Filter_Ideal _TRL_lib:MCFIL_BPF_Coupled_Design_V2_Tuned:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=7 GHz Stop=9 GHz Step=1.0 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:Term2  N__36 0 Num=2 Z=50 Ohm Noise=yes 
+Port:Term1  N__37 0 Num=1 Z=50 Ohm Noise=yes 
+
+;#@# autodisplay="S_Params_Quad_dB_Smith"
+MLIN2:TL2  N__22 N__36 Subst="MSub1" W=W0 L=LP Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MCFIL:CLin5  N__12 N__26 Subst="MSub1" W=W4 S=S4 L=L4-del_L 
+MCFIL:CLin4  N__30 N__12 Subst="MSub1" W=W4 S=S4 L=L4-del_L 
+MCFIL:CLin3  N__6 N__30 Subst="MSub1" W=W3 S=S3 L=L3-del_L 
+MCFIL:CLin2  N__9 N__6 Subst="MSub1" W=W2 S=S2 L=L2-del_L 
+MCFIL:CLin1  N__8 N__9 Subst="MSub1" W=W1 S=S1 L=L1-del_L 
+MLIN2:TL1  N__37 N__8 Subst="MSub1" W=W0 L=LP Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MCFIL:CLin8  N__7 N__22 Subst="MSub1" W=W1 S=S1 L=L1-del_L 
+MCFIL:CLin7  N__17 N__7 Subst="MSub1" W=W2 S=S2 L=L2-del_L 
+MCFIL:CLin6  N__26 N__17 Subst="MSub1" W=W3 S=S3 L=L3-del_L 
+
+Z0e_01=79.9440
+Z0o_01=37.8093
+Z0e_12=57.9891
+Z0o_12=43.9749
+Z0e_23=55.3507
+Z0o_23=45.6000
+Z0e_34=54.9560
+Z0o_34=45.8697
+Z0e_45=54.9560
+Z0o_45=45.8697
+Z0e_56=55.3507
+Z0o_56=45.6000
+Z0e_67=57.9891
+Z0o_67=43.9749
+Z0e_78=79.9440
+Z0o_78=37.8093
+
+f0=8.0000
+Z0=50.0000
+theta_P=90.0000
+theta=90.0000
+
+X=1.0
+del_L=192.2534 um
+model MSub1 MSUB H=0.635 mm Er=10.7 Mur=1 Cond=5.8e+7 Hu=1e+33 mm T=18 um TanD=0.0023 Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+
+W0=0.554134 mm
+LP=3.495200 mm
+W1=0.426855 mm
+S1=0.182431 mm
+L1=3.628680 mm
+W2=0.523858 mm
+S2=0.711227 mm
+L2=3.511630 mm
+W3=0.531227 mm
+S3=0.977672 mm
+L3=3.497740 mm
+W4=0.531960 mm
+S4=1.035280 mm
+L4=3.495880 mm

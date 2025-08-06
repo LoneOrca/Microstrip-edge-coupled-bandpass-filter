@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE Band_Pass_Filter_Ideal#20_TRL_lib Band_Pass_Filter_Ideal${__SPACE}_TRL_lib
+ASSIGN Band_Pass_Filter_Ideal#20_TRL_lib libMode shared

@@ -1,0 +1,20 @@
+
+hpeesofsim (*) 595.shp Oct 31 2023, MINT version 5
+    (64-bit windows built: Tue Oct 31, 2023 22:23:19 +0000)
+
+
+***** Simulation started at Fri Apr  5 18:48:10 2024
+      Running on host: "LAPTOP-PGPK6ETP"
+      In Directory: "E:\EE-414-514-PROJ2\Band_Pass_Filter_Ideal _TRL\data"
+      Process ID: 2116
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with only one device attached (topology corrected): 16
+
+
+SP SP1[1] <Band_Pass_Filter_Ideal _TRL_lib:BPF_Coupled_Line_Filter_Ideal_TRL:schematic>   freq=(7 GHz->9 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     1.94 seconds.
+
