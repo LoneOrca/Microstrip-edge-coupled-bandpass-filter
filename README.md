@@ -56,3 +56,6 @@ The filter was designed to meet the following performance criteria:
 ## Results Summary
 The project concludes with a comparative analysis of the ideal transmission line model versus the tuned microstrip implementation, verified through $|S_{21}|$ and $|S_{11}|$ plots across the 7 GHz to 9 GHz range.
 
+---
+
+Developed as part of the Microwave Engineering (EE 514/414) curriculum at Western New England University.
