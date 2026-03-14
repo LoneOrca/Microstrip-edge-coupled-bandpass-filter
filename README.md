@@ -25,7 +25,7 @@ The filter was designed to meet the following performance criteria:
 
 **documentation** → Final project report and design specs.
 
-## Implementation Details
+## Design Workflow
 
 ### 1. Lumped Element BPF
 
